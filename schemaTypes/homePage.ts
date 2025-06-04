@@ -109,6 +109,17 @@ export default defineType({
         }),
       ],
     }),
+    defineField({
+      name: 'featuredPosts',
+      title: 'Featured Posts',
+      type: 'array',
+      of: [
+        defineArrayMember({
+          type: 'reference',
+          to: [{type: 'post'}],
+        }),
+      ],
+    }),
   ],
   preview: {
     prepare() {
