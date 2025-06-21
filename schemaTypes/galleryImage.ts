@@ -2,7 +2,7 @@ export default {
   name: 'galleryImage',
   type: 'document',
   title: 'Gallery Image',
-  actions: ['create', 'update', 'delete', 'publish'],
+  __experimental_actions: ['create', 'update', 'delete', 'publish'], // allow all actions
   fields: [
     {
       name: 'image',
