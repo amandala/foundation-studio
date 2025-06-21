@@ -2,6 +2,7 @@ export default {
   name: 'galleryImage',
   type: 'document',
   title: 'Gallery Image',
+  actions: ['create', 'update', 'delete', 'publish'],
   fields: [
     {
       name: 'image',
@@ -15,6 +16,12 @@ export default {
       name: 'caption',
       type: 'string',
       title: 'Caption',
+    },
+    {
+      name: 'photoCredit',
+      type: 'string',
+      title: 'Photo Credit',
+      description: 'Photographer or source of the image',
     },
     {
       name: 'tags',

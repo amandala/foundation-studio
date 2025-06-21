@@ -120,6 +120,30 @@ export default defineType({
         }),
       ],
     }),
+    defineField({
+      name: 'featuredGalleryImages',
+      title: 'Featured Gallery Images',
+      type: 'array',
+      of: [
+        defineArrayMember({
+          type: 'reference',
+          to: [{type: 'galleryImage'}],
+        }),
+      ],
+      validation: (Rule) => Rule.max(12).warning('You can only select up to 8 gallery images.'),
+    }),
+    defineField({
+      name: 'foundationPartners',
+      title: 'Foundation Partners',
+      type: 'array',
+      of: [
+        defineArrayMember({
+          type: 'reference',
+          to: [{type: 'partner'}],
+        }),
+      ],
+      validation: (Rule) => Rule.max(8),
+    }),
   ],
   preview: {
     prepare() {

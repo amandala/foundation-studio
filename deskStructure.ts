@@ -9,7 +9,9 @@ export const deskStructure = (S: StructureBuilder) =>
         .id('homePage')
         .child(S.document().schemaType('homePage').documentId('singleton-homePage')),
 
+      // Divider
       S.divider(),
 
+      // All other document types (auto-includes everything else)
       ...S.documentTypeListItems().filter((item) => item.getId() !== 'homePage'),
     ])

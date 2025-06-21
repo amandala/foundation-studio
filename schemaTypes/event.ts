@@ -1,4 +1,4 @@
-import {defineField, defineType} from 'sanity'
+import {defineArrayMember, defineField, defineType} from 'sanity'
 
 export default defineType({
   name: 'event',
@@ -49,6 +49,18 @@ export default defineType({
           lists: [],
         },
       ],
+    }),
+    defineField({
+      name: 'eventPartners',
+      title: 'Foundation Partners',
+      type: 'array',
+      of: [
+        defineArrayMember({
+          type: 'reference',
+          to: [{type: 'partner'}],
+        }),
+      ],
+      validation: (Rule) => Rule.max(8),
     }),
   ],
 })

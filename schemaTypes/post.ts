@@ -1,4 +1,4 @@
-import {defineField, defineType} from 'sanity'
+import {defineArrayMember, defineField, defineType} from 'sanity'
 
 export default defineType({
   name: 'post',
@@ -48,6 +48,18 @@ export default defineType({
       name: 'body',
       title: 'Body',
       type: 'blockContent',
+    }),
+    defineField({
+      name: 'featuredGalleryImages',
+      title: 'Featured Gallery Images',
+      type: 'array',
+      of: [
+        defineArrayMember({
+          type: 'reference',
+          to: [{type: 'galleryImage'}],
+        }),
+      ],
+      validation: (Rule) => Rule.max(12).warning('You can only select up to 8 gallery images.'),
     }),
   ],
 
