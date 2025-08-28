@@ -38,6 +38,20 @@ export default defineType({
       type: 'datetime',
     }),
     defineField({
+      name: 'address',
+      title: 'Address',
+      type: 'string',
+    }),
+    defineField({
+      name: 'mapLink',
+      title: 'Map Link',
+      type: 'url',
+      validation: (Rule) =>
+        Rule.uri({
+          scheme: ['http', 'https'],
+        }),
+    }),
+    defineField({
       name: 'description',
       title: 'Desription',
       type: 'array',
@@ -61,6 +75,17 @@ export default defineType({
         }),
       ],
       validation: (Rule) => Rule.max(8),
+    }),
+    defineField({
+      name: 'featuredGalleryImages',
+      title: 'Featured Gallery Images',
+      type: 'array',
+      of: [
+        defineArrayMember({
+          type: 'reference',
+          to: [{type: 'galleryImage'}],
+        }),
+      ],
     }),
   ],
 })
