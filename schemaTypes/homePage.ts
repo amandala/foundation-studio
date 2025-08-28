@@ -64,17 +64,6 @@ export default defineType({
       to: [{type: 'event'}],
     }),
     defineField({
-      name: 'featuredPosts',
-      title: 'Featured Posts',
-      type: 'array',
-      of: [
-        defineArrayMember({
-          type: 'reference',
-          to: [{type: 'post'}],
-        }),
-      ],
-    }),
-    defineField({
       name: 'featuredGalleryImages',
       title: 'Featured Gallery Images',
       type: 'array',
@@ -85,6 +74,17 @@ export default defineType({
         }),
       ],
       validation: (Rule) => Rule.max(12).warning('You can only select up to 8 gallery images.'),
+    }),
+    defineField({
+      name: 'featuredPosts',
+      title: 'Featured Posts',
+      type: 'array',
+      of: [
+        defineArrayMember({
+          type: 'reference',
+          to: [{type: 'post'}],
+        }),
+      ],
     }),
     defineField({
       name: 'foundationPartners',
