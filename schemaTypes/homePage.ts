@@ -122,11 +122,11 @@ export default defineType({
               type: 'string',
               options: {
                 list: [
-                  {title: 'Facebook', value: 'facebook'},
-                  {title: 'Instagram', value: 'instagram'},
-                  {title: 'Twitter', value: 'twitter'},
-                  {title: 'YouTube', value: 'youtube'},
-                  {title: 'Other', value: 'other'},
+                  {title: 'Facebook', value: 'Facebook'},
+                  {title: 'Instagram', value: 'Instagram'},
+                  {title: 'Twitter', value: 'Twitter'},
+                  {title: 'YouTube', value: 'YouTube'},
+                  {title: 'Other', value: 'Other'},
                 ],
               },
             }),
