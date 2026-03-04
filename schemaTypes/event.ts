@@ -53,7 +53,7 @@ export default defineType({
     }),
     defineField({
       name: 'description',
-      title: 'Desription',
+      title: 'Description',
       type: 'array',
       of: [
         {
@@ -66,7 +66,7 @@ export default defineType({
     }),
     defineField({
       name: 'eventPartners',
-      title: 'Foundation Partners',
+      title: 'Event Partners',
       type: 'array',
       of: [
         defineArrayMember({

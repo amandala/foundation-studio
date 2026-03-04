@@ -73,7 +73,7 @@ export default defineType({
           to: [{type: 'galleryImage'}],
         }),
       ],
-      validation: (Rule) => Rule.max(12).warning('You can only select up to 8 gallery images.'),
+      validation: (Rule) => Rule.max(12).warning('You can only select up to 12 gallery images.'),
     }),
     defineField({
       name: 'featuredPosts',
