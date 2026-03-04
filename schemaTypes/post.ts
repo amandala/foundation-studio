@@ -66,7 +66,7 @@ export default defineType({
           to: [{type: 'galleryImage'}],
         }),
       ],
-      validation: (Rule) => Rule.max(12).warning('You can only select up to 12 gallery images.'),
+      validation: (Rule) => Rule.max(20).warning('You can only select up to 20 gallery images.'),
     }),
   ],
 

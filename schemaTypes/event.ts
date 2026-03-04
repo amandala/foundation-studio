@@ -74,7 +74,7 @@ export default defineType({
           to: [{type: 'partner'}],
         }),
       ],
-      validation: (Rule) => Rule.max(8),
+      validation: (Rule) => Rule.max(20),
     }),
     defineField({
       name: 'featuredGalleryImages',
