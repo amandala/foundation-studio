@@ -40,6 +40,13 @@ export default defineType({
       of: [{type: 'reference', to: {type: 'tag'}}],
     }),
     defineField({
+      name: 'description',
+      title: 'Description',
+      type: 'text',
+      rows: 3,
+      description: 'Short description or excerpt shown in post listings.',
+    }),
+    defineField({
       name: 'publishedAt',
       title: 'Published at',
       type: 'datetime',
@@ -59,7 +66,7 @@ export default defineType({
           to: [{type: 'galleryImage'}],
         }),
       ],
-      validation: (Rule) => Rule.max(12).warning('You can only select up to 8 gallery images.'),
+      validation: (Rule) => Rule.max(20).warning('You can only select up to 20 gallery images.'),
     }),
   ],
 

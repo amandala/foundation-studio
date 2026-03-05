@@ -19,7 +19,7 @@ export const client = createClient({
 const tagName = 'Oldschool' // Tag to assign to all images
 
 async function uploadImages() {
-  const folder = './trains' // folder with images
+  const folder = '../voespesto' // folder with images (relative to studio root)
   const files = fs.readdirSync(folder)
 
   // Fetch Oldschool tag
