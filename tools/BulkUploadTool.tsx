@@ -156,7 +156,9 @@ export function BulkUploadTool() {
       try {
         const asset = await client.assets.upload('image', entry.file, {filename: entry.file.name})
 
+        const docId = crypto.randomUUID().replace(/-/g, '').slice(0, 22)
         const doc: Record<string, unknown> = {
+          _id: docId,
           _type: 'galleryImage',
           image: {_type: 'image', asset: {_type: 'reference', _ref: asset._id}},
         }
@@ -170,7 +172,7 @@ export function BulkUploadTool() {
           }))
         }
 
-        await client.create(doc)
+        await client.createIfNotExists(doc)
         setFiles((prev) => prev.map((f) => (f.id === entry.id ? {...f, status: 'done'} : f)))
       } catch (err) {
         const message = err instanceof Error ? err.message : 'Upload failed'
